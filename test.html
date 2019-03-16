@@ -1,0 +1,88 @@
+
+<html>
+<head>
+<meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+      <link rel = "stylesheet"
+         href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel = "stylesheet"
+         href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      <script type = "text/javascript"
+         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>    
+		 
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+      </script>
+    
+      
+      <script src="socket/socket.js"></script>	  
+	  
+</head>
+
+<body>
+
+<button onclick="show()">Click here</button>
+ <div id="demo"></div>
+</body>
+</html>
+
+<script>
+var socket=io('', {query: 'user_id=1'});
+$(document).ready(function(){
+
+// chat shuru kerne ke liye
+// socket.emit("start_chat",{chat_room_id:null,item_id:21,buyer_id:22,seller_id:23,sender_id:1,text:'hello world'});
+
+//socket.on("start_chat",function(data){alert(data[0].text);})   access kerne ke liye
+
+//socket.emit("delete_chat_room",{chat_room_id:97});
+
+// message history ke liye
+ socket.emit("get_message_history",{chat_room_id:1});
+ //socket.on("chat_history",function(data){alert(data[0].name + " " +data[0].image_url);})
+//
+
+// chat_room_delete
+
+ //socket.emit("delete_chat_room",{chat_room_id:12});
+ 
+ // user connect
+
+ //socket.emit("connected",{chat_room_id:1,user_id:1});
+ 
+//socket.emit("disconnect_user",{chat_room_id:1,user_id:1});
+ 
+ //socket.emit("test_push",{user_id:1});
+ 
+ // typing event
+// socket.emit("typing",{user_id:1,chat_room_id:1});
+//socket.emit("delivered",{chat_detail_id:1});
+ // socket.emit("seen",{chat_detail_id:1});
+ 
+ 
+//socket.emit("create_chat_room",{buyer_id:1,seller_id:13,item_id:1});
+//socket.on("user_joined",function(d){alert(d);})
+
+//socket.emit("new_message",{chat_room_id:26,sender_id:13,text:'Test chat'});
+//socket.on("new_message",function(d){alert(d);})
+
+//socket.emit("typing",{chat_room_id:1,user_id:1});
+
+//socket.emit("delete_chat_room_with_chat_room_id",{chat_room_id:25});
+//socket.emit("delete_chat_room_with_user_id",{user_id:18});
+//socket.emit("mark_seen",{chat_detail_id:1035,time_stamp:"2018-06-25 08:57:41"});
+//socket.on("mark_seen",function(data){alert(data[0].text);})
+
+}) 
+/*
+$.ajax({
+type:"GET",
+url:"/send_push_test",
+data:{user_id:1},
+success:function(data){
+alert(data);
+}
+}) */
+
+//bowstringstudio@gmail.com
+
+
+</script>

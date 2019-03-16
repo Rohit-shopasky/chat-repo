@@ -1,0 +1,13 @@
+{
+    //event_name               parameters
+       start_chat   :   chat_room_id,item_id,buyer_id,seller_id,sender_id,reciever_id, message_text
+	   
+                        // server will response whole chat message_object
+	   
+	                    
+get_message_history :   chat_room_id   // server will response all messages (object) in response
+delete_chat_room    :   chat_room_id   // server will response all only 0 or 1 for failed or success
+
+
+
+}
